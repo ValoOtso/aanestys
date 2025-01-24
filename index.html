@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Äänestys</title>
+</head>
+<body>
+    <form id="login">
+        <label for="username2">Käyttäjänimi:</label>
+        <input type="text" name="username2" id="username2">
+        <label for="password2">Salasana:</label>
+        <input type="password" name="password2" id="password2">
+        <button onclick="kirjaudu()" type="submit">Kirjaudu</button>
+    </form>
+    <form id="signup">
+        <div id="error-signup"></div>
+        <label for="username1">Käyttäjänimi:</label>
+        <input type="text" name="username1" id="username1">
+        <label for="password1">Salasana:</label>
+        <input type="password" name="password1" id="password1">
+        <button onclick="tallennaTiedot()" type="submit">Luo käyttäjä</button>
+    </form>
+    <div id="kirjautumisilmoitus"></div>
+    <script src="script.js"></script>
+</body>
+</html>
