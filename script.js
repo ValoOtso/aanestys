@@ -25,7 +25,7 @@ function tallennaTiedot(){
     salasana = document.getElementById('password1').value
     console.log(kayttajanimi)
     console.log(salasana)
-    kayttaja = {username: kayttajanimi, password: salasana, admin: document.getElementById('admin1').checked}
+    kayttaja = {'username': kayttajanimi, 'password': salasana, 'admin': document.getElementById('admin1').checked}
     console.log(kayttaja)
     if(salasana.length === 0 || kayttajanimi.length === 0){
         valid = false
@@ -40,6 +40,7 @@ function tallennaTiedot(){
         if(i+1 === kayttajat.length){
             console.log(kayttaja)
             kayttajat.push(kayttaja)
+            localStorage.setItem('users', JSON.stringify(kayttajat))
             valid = true
             return valid
         }
