@@ -14,10 +14,12 @@ function kirjaudu(){
 
 
 function tallennaTiedot(){
-    if (localStorage.getItem('users') === null){
-        let kayttajat = []
-    }else{let kayttajat = localStorage.getItem('users')}
-    //const kayttajat = localStorage.getItem('users') || []
+    let kayttajat;
+    if (localStorage.getItem('users')) {
+        kayttajat = JSON.parse(localStorage.getItem('users'));
+    } else {
+        kayttajat = [];
+    }
     kayttajanimi = document.getElementById('username1').value
     salasana = document.getElementById('password1').value
     kayttaja = {'username': kayttajanimi, 'password': salasana, 'admin': document.getElementById('admin1').checked}
@@ -37,9 +39,6 @@ function tallennaTiedot(){
                 localStorage.setItem('users', JSON.stringify(kayttajat))
             }
         }
-    }else{
-        kayttajat.push(kayttaja)
-                localStorage.setItem('users', JSON.stringify(kayttajat))
     }
 }
 
