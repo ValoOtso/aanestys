@@ -14,10 +14,10 @@ function kirjaudu(){
 
 
 function tallennaTiedot(){
-    //if (localStorage.getItem('users') === null){
-        //let kayttajat = []
-    //}else{let kayttajat = localStorage.getItem('users')}
-    const kayttajat = localStorage.getItem('users') || []
+    if (localStorage.getItem('users') === null){
+        let kayttajat = []
+    }else{let kayttajat = localStorage.getItem('users')}
+    //const kayttajat = localStorage.getItem('users') || []
     kayttajanimi = document.getElementById('username1').value
     salasana = document.getElementById('password1').value
     kayttaja = {'username': kayttajanimi, 'password': salasana, 'admin': document.getElementById('admin1').checked}
