@@ -6,7 +6,7 @@
     <title>Äänestys</title>
 </head>
 <body>
-    <form id="login">
+    <div id="login">
         <label for="username2">Käyttäjänimi:</label>
         <input type="text" name="username2" id="username2">
         <label for="password2">Salasana:</label>
@@ -14,8 +14,8 @@
         <button onsubmit="kirjaudu()" type="submit">Kirjaudu</button>
         <label for="admin2">Ylläpitäjä:</label>
         <input type="checkbox" name="admin2" id="admin2">
-    </form>
-    <form id="signup" onsubmit="return tallennaTiedot()">
+    </div>
+    <div id="signup">
         <div id="error-signup"></div>
         <label for="username1">Käyttäjänimi:</label>
         <input type="text" name="username1" id="username1">
@@ -23,8 +23,8 @@
         <input type="password" name="password1" id="password1">
         <label for="admin1">Ylläpitäjä:</label>
         <input type="checkbox" name="admin1" id="admin1">
-        <button type="submit">Luo käyttäjä</button>
-    </form>
+        <button onclick="tallennaTiedot()" type="button">Luo käyttäjä</button>
+    </div>
     <div id="kirjautumisilmoitus"></div>
     <script src="script.js"></script>
 </body>
