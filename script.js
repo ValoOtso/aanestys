@@ -8,6 +8,7 @@ let kayttaja = {}
 let kayttajat;
 let poll
 let polls
+let x = 1
 
 function kirjaudu(){
     kayttajat = JSON.parse(localStorage.getItem('users'))
@@ -89,29 +90,48 @@ if (localStorage.getItem('polls')) {
 }    
 
 
-for (i = 0; i < polls.length; i++) { 
-    var question;
+for (i = 0; i < polls.length; i++) {
     var theInput;
     var thisQuestion = polls[i];
     var theValues =   thisQuestion.values;
     var label = document.createElement( 'label'); 
     var theForm = document.createElement("form");
+    var theQuestion = document.createElement('p')
+    var theButton = document.createElement('button')
+    theButton.setAttribute('type', 'submit')
+    theButton.setAttribute('class', 'btn btn-primary mt-3')
+    theButton.innerHTML = 'Äänestä'
     theForm.setAttribute('name',thisQuestion.formName);
-
+    theForm.setAttribute('class', 'col-md-3')
+    theQuestion.innerText = thisQuestion.formName;
+    theForm.appendChild(theQuestion)
     for (q = 0; q < theValues.length; q++) { 
     
         theInput = document.createElement("input");
 
         theInput.setAttribute('type',"radio");
+        theInput.setAttribute('class', 'form-check-input')
         
         theInput.setAttribute('name',thisQuestion.radioName);
         theInput.setAttribute('value',theValues[q]);
         
         label.appendChild(theInput);
-        label.innerHTML += "<span> " + theValues[q] + "</span><br>";
+        label.innerHTML += "<span class='form-check-label'> " + theValues[q] + "</span><br>";
 
         theForm.appendChild( label);
+        label.classList.add('form-check')
     }
-    document.body.appendChild(theForm)
-
+    if(x == 1){
+        row = document.createElement('div')
+        row.setAttribute('class', 'row')
+    }
+    theForm.classList.add('div')
+    theForm.appendChild(theButton)
+    row.appendChild(theForm)
+    document.body.appendChild(row)
+    x++
+    if(x == 5){
+        x = 1
+    }
+    
 }
