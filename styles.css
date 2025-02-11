@@ -5,6 +5,12 @@ form{
     padding: 20px;
     background-color: cadetblue;
     margin: 5px;
+    border: 2px solid gray;
+    border-radius: 5px;
+}
+
+.form-check-input:disabled~.form-check-label, .form-check-input[disabled]~.form-check-label {
+    opacity: 1;
 }
 
 body{
@@ -14,6 +20,7 @@ body{
     margin-left: auto;
     margin-right: auto;
     box-sizing: border-box;
+    background-color: rgb(123, 177, 179);
 }
 
 header{
@@ -32,12 +39,15 @@ header{
 
 @media only screen and (min-width: 768px) {
     body{max-width: 700px;}
+    .row{flex-wrap: nowrap;}
 }
 
 @media only screen and (min-width: 992px) {
     body{max-width: 850px;}
+    .row{flex-wrap: nowrap;}
 }
 
 @media only screen and (min-width: 1200px) {
-    body{max-width: 1000px;}
+    body{max-width: 1040px;}
+    .row{flex-wrap: nowrap;}
 }
