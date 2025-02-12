@@ -18,10 +18,10 @@ function kirjaudu(){
         if (kayttajanimi2 === kayttajat[i]['username'] && salasana2 === kayttajat[i]['password'] && admin === kayttajat[i]['admin']){
             localStorage.setItem('username', kayttajanimi2)
             if (admin === true){
-                location.replace("/loggedinadmin.html")
+                location.replace("./loggedinadmin.html")
                 break
             }else{
-                location.replace("/loggedin.html")
+                location.replace("./loggedin.html")
                 break
             }
         }
